@@ -1,0 +1,9 @@
+<svg width="48px" height="48px" viewBox="0 0 48 48" class="imglogo"  xmlns="http://www.w3.org/2000/svg">
+    <path d="M44.961,3v42h-42V3H44.961 M47.961,0h-48v48h48V0L47.961,0z"/>
+    <path d="M23.961,8.875c8.339,0,15.125,6.785,15.125,15.125s-6.785,15.125-15.125,15.125c-8.34,0-15.125-6.785-15.125-15.125S15.622,8.875,23.961,8.875 M23.961,5.875C13.951,5.875,5.836,13.99,5.836,24c0,10.011,8.115,18.125,18.125,18.125c10.011,0,18.125-8.114,18.125-18.125C42.086,13.99,33.973,5.875,23.961,5.875L23.961,5.875z"/>
+    <line fill="none" stroke-width="3" stroke-miterlimit="10" x1="27.719" y1="23.577" x2="34.789" y2="16.506" class="imglogo-int"/>
+    <line fill="none" stroke-width="3" stroke-miterlimit="10" x1="34.789" y1="23.576" x2="27.719" y2="16.506" class="imglogo-int"/>
+    <line fill="none" stroke-width="3" stroke-miterlimit="10" x1="13.133" y1="23.577" x2="20.205" y2="16.506" class="imglogo-int"/>
+    <line fill="none" stroke-width="3" stroke-miterlimit="10" x1="20.204" y1="23.576" x2="13.133" y2="16.506" class="imglogo-int"/>
+    <path fill="none" stroke-width="3" stroke-miterlimit="10" d="M16.667,34.958c0-1.657,3.265-3.813,7.292-3.813c4.029,0,7.294,2.155,7.294,3.813" class="imglogo-int"/>
+</svg>
