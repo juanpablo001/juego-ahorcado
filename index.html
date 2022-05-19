@@ -1,51 +1,93 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juego del ahorcado</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="css/style.css">
-</head>
+<html lang="en">
 
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Juego de ahorcado</title>
+        <link rel="stylesheet" href="css/style2.css">
+    </head>
 
-    <header class="header">
-        <div class="contenido-encabezado">
-            <svg width="48px" height="48px" viewBox="0 0 48 48" class="imglogo">
-                <path d="M44.961,3v42h-42V3H44.961 M47.961,0h-48v48h48V0L47.961,0z"/>
-                <path d="M23.961,8.875c8.339,0,15.125,6.785,15.125,15.125s-6.785,15.125-15.125,15.125c-8.34,0-15.125-6.785-15.125-15.125S15.622,8.875,23.961,8.875 M23.961,5.875C13.951,5.875,5.836,13.99,5.836,24c0,10.011,8.115,18.125,18.125,18.125c10.011,0,18.125-8.114,18.125-18.125C42.086,13.99,33.973,5.875,23.961,5.875L23.961,5.875z"/>
-                <line fill="none" stroke-width="3" stroke-miterlimit="10" x1="27.719" y1="23.577" x2="34.789" y2="16.506" class="imglogo-int"/>
-                <line fill="none" stroke-width="3" stroke-miterlimit="10" x1="34.789" y1="23.576" x2="27.719" y2="16.506" class="imglogo-int"/>
-                <line fill="none" stroke-width="3" stroke-miterlimit="10" x1="13.133" y1="23.577" x2="20.205" y2="16.506" class="imglogo-int"/>
-                <line fill="none" stroke-width="3" stroke-miterlimit="10" x1="20.204" y1="23.576" x2="13.133" y2="16.506" class="imglogo-int"/>
-                <path fill="none" stroke-width="3" stroke-miterlimit="10" d="M16.667,34.958c0-1.657,3.265-3.813,7.292-3.813c4.029,0,7.294,2.155,7.294,3.813" class="imglogo-int"/>
-            </svg>
+    <body>
+        <div class="principio">
+
+            <div class="top">
+                <svg width="48px" height="48px" viewBox="0 0 48 48" class="imglogo">
+                    <path d="M44.961,3v42h-42V3H44.961 M47.961,0h-48v48h48V0L47.961,0z"/>
+                    <path d="M23.961,8.875c8.339,0,15.125,6.785,15.125,15.125s-6.785,15.125-15.125,15.125c-8.34,0-15.125-6.785-15.125-15.125S15.622,8.875,23.961,8.875 M23.961,5.875C13.951,5.875,5.836,13.99,5.836,24c0,10.011,8.115,18.125,18.125,18.125c10.011,0,18.125-8.114,18.125-18.125C42.086,13.99,33.973,5.875,23.961,5.875L23.961,5.875z"/>
+                    <line fill="none" stroke-width="3" stroke-miterlimit="10" x1="27.719" y1="23.577" x2="34.789" y2="16.506" class="imglogo-int"/>
+                    <line fill="none" stroke-width="3" stroke-miterlimit="10" x1="34.789" y1="23.576" x2="27.719" y2="16.506" class="imglogo-int"/>
+                    <line fill="none" stroke-width="3" stroke-miterlimit="10" x1="13.133" y1="23.577" x2="20.205" y2="16.506" class="imglogo-int"/>
+                    <line fill="none" stroke-width="3" stroke-miterlimit="10" x1="20.204" y1="23.576" x2="13.133" y2="16.506" class="imglogo-int"/>
+                    <path fill="none" stroke-width="3" stroke-miterlimit="10" d="M16.667,34.958c0-1.657,3.265-3.813,7.292-3.813c4.029,0,7.294,2.155,7.294,3.813" class="imglogo-int"/>
+                </svg>
+                <h1>Juego de ahorcado</h1>
+            </div>
+            <div class="cinta">
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </div>
+            <div class="contenedor">
+
+                <div id="uno" class="pagina">
+                    <button id="btn-inicia" class="btn-inicia">Iniciar Juego</button>
+                    <button id="btn-agrega" class="btn-generi">Agregar nueva palabra</button>
+                </div>
+
+                <div id="dos" class="pagina">
+                    <div>
+                        <textarea name="" id="txtarea" cols="30" rows="5" placeholder="Ingrese una palabra"></textarea>
+                    </div>
+                    <div>
+                        <p>Máximo 8 letras</p>
+                    </div>
+                    <div class="acciones">
+                        <button id="btn-guarda" class="btn-generi">Guardar y empezar</button>
+                        <button id="btn-cancela" class="btn-generi">Cancelar</button>
+                    </div>
+                </div>
+
+                <div id="tres" class="pagina">
+                    <canvas width="294" height="360" class="ahorcado">     
+                    </canvas>
+                    <div class="letras-juego">
+                        <div class="palabra">
+                            <p>P A L A B R A</p>
+                            <canvas width="464" height="92"></canvas>
+                        </div>
+                        <div class="otras-letras">
+                            Q W E R T Y
+                        </div>
+                    </div>
+                    <div class="acciones">
+                        <button id="btn-nuevo" class="btn-generi">Nuevo juego</button>
+                        <button id="btn-salir" class="btn-generi">Desistir</button>
+                    </div>
+                </div>
+
+                <!--
+                <div id="cuatro" class="pagina"></div>
+                -->
+
+            </div>
+
         </div>
-        <div class="contenido-encabezado">
-            <h1 class="h1">Juego de Ahorcado</h1>
-        </div>
-    </header>
 
-    <main>
-        <section class="container">
-            <p>Texto ejemplo</p>
-        </section>
-    </main>
+        <footer class="footer">
+            <div class="bottom">
+                <p>
+                    &#169; Juan Pablo - 2022 - 
+                    <a href="https://github.com/juanpablo001"><i class="fa-brands fa-github-alt"></i></a> - 
+                    <a href="https://www.linkedin.com/in/juan-pablo-amador-palestina/"><i class="fa-brands fa-linkedin-in"></i></a>
+                </p>
+            </div>
+        </footer>
+        
+        <script src="js/acciones.js"></script>
 
-    <footer class="footer">
-            <h5 class="h5">
-                &#169; Juan Pablo - 2022 - 
-                <a href="https://github.com/juanpablo001"><i class="fa-brands fa-github-alt"></i></a> - 
-                <a href="https://www.linkedin.com/in/juan-pablo-amador-palestina/"><i class="fa-brands fa-linkedin-in"></i></a>
-            </h5>
-    </footer>
-
-    <script src="https://kit.fontawesome.com/0a5c1f70ce.js" crossorigin="anonymous"></script>
-
-</body>
+    </body>
 
 </html>
