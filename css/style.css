@@ -4,27 +4,25 @@
 
 body {
     height: 100%;
+    font-family: 'Inter', sans-serif;
 }
 
 .principio {
     position: relative;
     min-height: 100%;
     height: auto;
-    /*margin: 0 auto -100px;*/
-    border: 1px dotted black;
 }
 /* ************************* */
 .top {
-    height: 150px;
-    width: 720px;
-    margin: 0 auto;
+    margin: 0px auto;
+    padding-top: 30px;
     position: relative;
-    border: 1px dotted lightcyan;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap
+    flex-wrap: wrap;
+    background: rgba(144, 238, 144, 0.9);
 }
 
 .imglogo {
@@ -35,17 +33,6 @@ body {
 .imglogo-int {
     stroke: #000000;
 }
-
-.cinta {
-    position: relative;
-    width: 100%;
-    min-width: 760px;
-    height: 50px;
-    background: black;
-    display: flex;
-    flex-flow: row;
-    color: white;
-}
 /* ************************* */
 .contenedor {
     position: relative;
@@ -54,6 +41,32 @@ body {
     margin: 0 auto;
     width: auto;
     height: auto;
+    background: linear-gradient(rgba(144, 238, 144, 0.9),#FFFFFF);
+}
+
+#aviso {
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(rgba(144, 238, 144, 0.8),#FFFFFF);
+    justify-content: center;
+    z-index: 1;
+}
+
+.btn-feliz {
+    width: 318px;
+    height: 68px;
+    border-radius: 20px;
+    margin: 0px 10px;
+    /*z-index: 2;*/
+}
+
+#textoFinal {
+    font-size: 38px;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .elemento {
@@ -64,9 +77,7 @@ body {
     margin: 0 auto;
     text-align: center;
     position: relative;
-    height: 720px;
-    border: 2px dotted goldenrod;
-    /*display: flex;*/
+    height: 640px;
     justify-content: space-evenly;
     flex-direction: column;
     align-items: center;
@@ -76,7 +87,17 @@ body {
     width: 318px;
     height: 114px;
     border-radius: 24px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 1s all;
+    cursor: pointer;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+}
+
+.btn-inicia:hover {
     background: lightseagreen;
+    color: white;
+    transform: scale(1.05);
 }
 
 .btn-generi {
@@ -84,27 +105,74 @@ body {
     height: 68px;
     border-radius: 20px;
     margin: 0px 10px;
+    transition: 1s all;
+    cursor: pointer;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
 }
 
-.ahorcado {
-    border: 1px double lightseagreen;
+.btn-generi:hover {
+    background: lightseagreen;
+    color: white;
+    transform: scale(1.05);
+}
+
+.contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.txt-area {
+    width: 460px;
+    height: 370px;
+    resize: none;
+    border: none;
+    background: none;
+    font-size: 32px;
+    margin-top: 30px;
+    padding: 10px 10px;
+}
+
+.txt-area:focus {
+    outline: none;
+}
+
+.txt-max {
+    font-weight: bold;
+    width: 35%;
+    text-align: left;
+}
+
+.canvasltr {
+    margin: 0px 10px;
+}
+
+#palabra {
+    margin: 30px 0px;
+    display: flex;
+    height: 92px;
+}
+
+#otras-letras {
+    font-size: 24px;
 }
 /* ************************* */
 .footer {
     position: relative;
     width: auto;
     height: auto;
-    /*margin: 0 auto -100px;*/
-    /*
-    opacity: 0.2;
-    background-color: black;
-    box-shadow: 0 0 10px black;
-    */
+    background: linear-gradient(#FFFFFF, rgba(144, 238, 144, 0.9));
+}
+
+.txt-footer {
+    font-weight: bold;
+}
+
+.fa-brands {
+    color: #000000;
 }
 
 .bottom {
-    
-    border: 1px dotted black;
     height: 100px;
     display: flex;
     color: black;
@@ -121,3 +189,12 @@ body {
     display: none;
 }
 
+.fadeOut {
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.fadeIn {
+    opacity: 1 !important;
+    transition: 0.5s ease-out;
+}
