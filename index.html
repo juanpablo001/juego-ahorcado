@@ -40,7 +40,7 @@
 
                 <div id="dos" class="pagina">
                     <div>
-                        <textarea id="txt-area" cols="30" rows="1" placeholder="Ingrese una palabra" class="txt-area"></textarea>
+                        <input type="text" id="txt-area" autocomplete="off" maxlength="8" placeholder="Ingrese una palabra" class="txt-area">
                     </div>
                     <div class="txt-max">
                         <p><i class="fa-solid fa-circle-exclamation"></i> Máximo 8 letras</p>
@@ -52,7 +52,7 @@
                 </div>
 
                 <div id="tres" class="pagina">
-                    <canvas width="294" height="360" id="ahorcado" style="border:0px solid #d3d3d3;">     
+                    <canvas width="294" height="360" id="ahorcado" style="border:0px solid #d3d3d3;">
                     </canvas>
                     <div class="contenido">
                         <div id="palabra">
@@ -64,6 +64,7 @@
                         <button id="btn-nuevo" class="btn-generi">Nuevo juego</button>
                         <button id="btn-salir" class="btn-generi">Desistir</button>
                     </div>
+                    <input type="text" id="letra-hidden" autocomplete="off" maxlength="1" class="letra-hidden">
                 </div>
 
             </div>

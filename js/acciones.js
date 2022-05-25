@@ -10,7 +10,7 @@ var paginaUno = document.getElementById("uno");
 var paginaDos = document.getElementById("dos");
 var paginaTres = document.getElementById("tres");
 
-let txtArea = document.querySelector("#txt-area");
+var txtArea = document.querySelector("#txt-area");
 var aviso = document.getElementById("aviso");
 
 function estadoInicial() {
@@ -29,13 +29,16 @@ btnInicia.addEventListener("click", function() {
 
 btnAgrega.addEventListener("click", function() {
     cambiaPagina(paginaDos);
-    capturaPalabra();
+    enfocaTextArea();
 });
 
 btnGuarda.addEventListener("click", function() {
-    guardaPalabra();
-    //cambiaPagina(paginaTres);
-    //iniciaJuego();
+    revisaPalabraNueva();
+});
+
+btnCancela.addEventListener("click", function() {
+    terminaEventTxtArea();
+    cambiaPagina(paginaUno);
 });
 
 btnNuevo.addEventListener("click", function() {
@@ -47,11 +50,6 @@ btnNuevo.addEventListener("click", function() {
 btnSalir.addEventListener("click", function() {
     cambiaPagina(paginaUno);
     termina();
-});
-
-btnCancela.addEventListener("click", function() {
-    cancelaPalabra();
-    cambiaPagina(paginaUno);
 });
 
 btnFeliz.addEventListener("click", function() {
@@ -80,30 +78,39 @@ function cambiaPagina(pagina) {
     
 }
 
-function capturaPalabra() {
+function enfocaTextArea() {
     txtArea.value = "";
     txtArea.focus();
-    txtArea.addEventListener("keydown", nuevaPalabra);
+    capturaTextArea();
+    mayusculas();
 }
 
-function nuevaPalabra(event) {
-    var palabra = event.key;
-    console.log(palabra);
-    /*
-    if(texto.value == "") {
-        btnGuarda.disabled = true;
+function capturaTextArea() {
+    txtArea.addEventListener("keyup", mayusculas);
+}
+
+function mayusculas(eve) {
+    console.log("funcion minusculas activa");
+    txtArea.value = txtArea.value.replace(/[^aA-zZ]/, "").toUpperCase();
+}
+
+function revisaPalabraNueva() {
+    var candidata = txtArea.value;
+    if (candidata == "") {
+        console.log("No hay palabra que guardar");
+        txtArea.focus();
     } else {
-        console.log(txtArea.value);
+        console.log("La palabra agregada es: " + candidata);
+        palabras.push(candidata);
+        terminaEventTxtArea();
+        cambiaPagina(paginaTres);
+        iniciaJuego();
     }
-    */
 }
 
-function guardaPalabra() {
-    cancelaPalabra();
-}
-
-function cancelaPalabra() {
-    txtArea.removeEventListener("keydown", nuevaPalabra);
+function terminaEventTxtArea() {
+    console.log("funcion minusculas desactivada");
+    txtArea.removeEventListener("keyup", mayusculas);
 }
 
 function termina() {
@@ -123,7 +130,9 @@ function quitaListener() {
 function felicidades() {
     aviso.classList.remove("oculta");
     aviso.classList.add("visible");
+    //
     quitaListener();
+    //
     textoFeliz();
 }
 

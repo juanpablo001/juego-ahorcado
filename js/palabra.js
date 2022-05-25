@@ -9,11 +9,18 @@ var key = "";
 let encontrado;
 var error = 0;
 var sigue = true;
+// checar esto
+// revisar uso de input
+var letrahidden = document.querySelector("#txt-area");
 
 function iniciaJuego() {
     cargaPalabra();
-
+    focusletrahidden();
     document.addEventListener("keydown", teclaUsada);
+}
+
+function focusletrahidden(){
+    letrahidden.focus();
 }
 
 function teclaUsada(event) {
